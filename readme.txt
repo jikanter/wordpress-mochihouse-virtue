@@ -49,6 +49,9 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.2.5 - Mochi =
+* Initial Mochi fork
+
 = Version: 2.2.5 =
 * Theme options Update
 * Add Math question to contact form
