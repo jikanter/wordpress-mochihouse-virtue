@@ -77,7 +77,13 @@
                       <div class="imghoverclass post-single-img"><a href="<?php echo $img_url ?>" rel="lightbox[pp_gal]" class="lightboxhover"><img src="<?php echo $image ?>" alt="<?php the_title(); ?>" /></a></div>
                     <?php endif; ?>
         <?php } ?>
-    <?php get_template_part('templates/post', 'date'); ?> 
+    <?php 
+    // show the date if 'date_stamp_post' is set and is yes|true
+    $custom_fields = get_post_custom($post->ID);
+    if ((isset($custom_fields['date_stamp_post'])) && (($custom_fields['date_stamp_post'] == 'yes') || ($custom_fields['date_stamp_post'] == 'true'))) { 
+      get_template_part('templates/post', 'date');
+    }
+    ?> 
     <header>
       <h1 class="entry-title"><?php the_title(); ?></h1>
       <?php get_template_part('templates/entry', 'meta-subhead'); ?>  
